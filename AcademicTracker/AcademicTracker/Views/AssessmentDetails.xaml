@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AcademicTracker.Views.AssessmentDetails">
+    <StackLayout>
+        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+            <Frame BackgroundColor="#2196F3" Padding="20" CornerRadius="0" Margin="0">
+                <Label Text="Academic Tracker" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <StackLayout BackgroundColor="#698faa" Padding="10" Margin="0,-6,0,0">
+                <Label Text="Assessment Details" 
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    FontSize="Title"
+                    Padding="30,10,30,10"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                <Label Text="Name: "
+                       VerticalTextAlignment="Center"                        
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       Margin="10,0,0,0"/>
+                <Entry x:Name="AssessmentName"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="0,0,10,10"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                <Label Text="Status: "
+                       VerticalTextAlignment="Center"                        
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       Margin="10,0,0,0"/>
+                <Picker x:Name="AssessmentType"
+                        Title="Type">
+                    <Picker.Items>
+                        <x:String>Performance</x:String>
+                        <x:String>Objective</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                <Label Text="Start Date: "
+                       VerticalTextAlignment="Center"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       Margin="10,0,0,0"/>
+                <DatePicker x:Name="AssessmentStartDate" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                <Label Text="End Date: "
+                       VerticalTextAlignment="Center"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       Margin="10,0,0,0"/>
+                <DatePicker x:Name="AssessmentEndDate" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                <Label Text="Notifications: "
+                       VerticalTextAlignment="Center"                        
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       Margin="10,0,0,0"/>
+                <Switch x:Name="AssessmentNotification" IsToggled="True">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="On">
+                                <VisualState.Setters>
+                                    <Setter Property="ThumbColor"
+                                            Value="MediumSpringGreen" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Off">
+                                <VisualState.Setters>
+                                    <Setter Property="ThumbColor"
+                                            Value="Red" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Switch>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Margin="5">
+            <Button Text="Save" 
+                        BackgroundColor="#2196F3"
+                        FontSize="Medium"
+                        TextColor="White"
+                        Padding="10"
+                        x:Name="SaveAssessment"
+                        Clicked="SaveAssessment_Clicked" />
+            <Button Text="Delete Assessment" 
+                        BackgroundColor="#2196F3"
+                        FontSize="Medium"
+                        TextColor="White"
+                        Padding="10"
+                        x:Name="DeleteAssessment"
+                        Clicked="DeleteAssessment_Clicked" />
+            <Button Text="Cancel" 
+                        BackgroundColor="#2196F3"
+                        FontSize="Medium"
+                        TextColor="White"
+                        Padding="10"
+                        x:Name="Cancel"
+                        Clicked="Cancel_Clicked" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

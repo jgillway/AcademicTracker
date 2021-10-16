@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AcademicTracker.Views.CoursePage">
+
+    <StackLayout>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <Frame BackgroundColor="#2196F3" Padding="20" CornerRadius="0" Margin="0">
+                <Label Text="Academic Tracker" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <StackLayout  VerticalOptions="StartAndExpand"  BackgroundColor="#698faa" Padding="10" Margin="-6">
+                <Label x:Name="Header"
+                TextColor="Black"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+                FontSize="Title"
+                Padding="30,10,30,5"/>
+                <Label x:Name="Details"
+                TextColor="Black"
+                HorizontalTextAlignment="Center"
+                FontSize="Default"
+                Padding="30,5,30,10" />
+            </StackLayout>
+            <ListView ItemTapped="AssessmentList_ItemTapped" x:Name="AssessmentList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell IsEnabled="True">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <Label Text="{Binding Name}" TextColor ="Black" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+                                <Label Text="{Binding Type}" TextColor ="Black" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+                                <Label Text="{Binding StartDate, StringFormat='{}{0:MM/dd/yyyy}'}" TextColor="Black" VerticalTextAlignment="Center" />
+                                <Label Text=" - " TextColor="Black" VerticalTextAlignment="Center" />
+                                <Label Text="{Binding EndDate, StringFormat='{}{0:MM/dd/yyyy}'}" TextColor="Black" VerticalTextAlignment="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Margin="5">
+                <Button Text="Edit Course" 
+                    BackgroundColor="#2196F3"
+                    FontSize="Medium"
+                    TextColor="White"
+                    Padding="10"
+                    x:Name="EditCourse"
+                    Clicked="EditCourse_Clicked" />
+                <Button Text="Add Assessment" 
+                    BackgroundColor="#2196F3"
+                    FontSize="Medium"
+                    TextColor="White"
+                    Padding="10"
+                    x:Name="AddAssessment"
+                    Clicked="AddAssessment_Clicked" />
+                <Button Text="Cancel" 
+                    BackgroundColor="#2196F3"
+                    FontSize="Medium"
+                    TextColor="White"
+                    Padding="10"
+                    x:Name="Cancel"
+                    Clicked="Cancel_Clicked" />
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

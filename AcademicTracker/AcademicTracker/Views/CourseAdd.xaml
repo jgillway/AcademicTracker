@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AcademicTracker.Views.CourseAdd">
+    <StackLayout>
+        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+            <Frame BackgroundColor="#2196F3" Padding="20" CornerRadius="0" Margin="0">
+                <Label Text="Academic Tracker" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <StackLayout BackgroundColor="#698faa" Padding="10" Margin="0,-6,0,0">
+                <Label Text="Add Course" 
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    FontSize="Title"
+                    Padding="30,10,30,10"/>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Text="Name: "
+                       VerticalTextAlignment="Center"                        
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       Margin="10,0,0,0"/>
+                    <Entry x:Name="CourseName"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="0,0,10,10"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Text="Start Date: "
+                       VerticalTextAlignment="Center"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       Margin="10,0,0,0"/>
+                    <DatePicker x:Name="CourseStartDate" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Text="End Date: "
+                       VerticalTextAlignment="Center"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       Margin="10,0,0,0"/>
+                    <DatePicker x:Name="CourseEndDate" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Text="Status: "
+                       VerticalTextAlignment="Center"                        
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       Margin="10,0,0,0"/>
+                    <Picker x:Name="CourseStatus"
+                        Title="Status">
+                        <Picker.Items>
+                            <x:String>Active</x:String>
+                            <x:String>Inactive</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Text="Instructors Name: "
+                       VerticalTextAlignment="Center"                        
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       Margin="10,0,0,0"/>
+                    <Entry x:Name="CourseInstructorName"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="0,0,10,10"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Text="Instructors Phone: "
+                       VerticalTextAlignment="Center"                        
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       Margin="10,0,0,0"/>
+                    <Entry x:Name="CourseInstructorPhone"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="0,0,10,10"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Text="Instructors Email: "
+                       VerticalTextAlignment="Center"                        
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       Margin="10,0,0,0"/>
+                    <Entry x:Name="CourseInstructorEmail"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="0,0,10,10"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Text="Notes: "
+                       VerticalTextAlignment="Center"                        
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       Margin="10,0,0,0"/>
+                    <Entry x:Name="CourseNotes"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="0,0,10,10"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
+                    <Label Text="Notifications: "
+                       VerticalTextAlignment="Center"                        
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       Margin="10,0,0,0"/>
+                    <Switch x:Name="CourseNotification" IsToggled="True">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="On">
+                                    <VisualState.Setters>
+                                        <Setter Property="ThumbColor"
+                                            Value="MediumSpringGreen" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Off">
+                                    <VisualState.Setters>
+                                        <Setter Property="ThumbColor"
+                                            Value="Red" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Switch>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="5">
+            <Button Text="Submit" 
+                    BackgroundColor="#2196F3"
+                    FontSize="Large"
+                    TextColor="White"
+                    Padding="15"
+                    x:Name="SubmitAddCourse"
+                    Clicked="SubmitAddCourse_Clicked" />
+            <Button Text="Cancel" 
+                    BackgroundColor="#2196F3"
+                    FontSize="Large"
+                    TextColor="White"
+                    Padding="15"
+                    x:Name="CancelAddCourse"
+                    Clicked="CancelAddCourse_Clicked" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
